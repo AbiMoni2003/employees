@@ -40,21 +40,13 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     @Override
-//    public ResponseEntity<Object> deleteEmployeeById(Long id) {
-//        if (employeesRepository.existsById(id)) {
-//            employeesRepository.deleteById(id);
-//            return ResponseEntity.ok("Employee ID " + id + " deleted successfully.");
-//        } else {
-//            return ResponseEntity.ok("Employee ID " + id + " not found.");
-//        }
-//    }
     public EmployeesResponseDto deleteEmployeeById(Long id) {
         Optional<Employees> product = employeesRepository.findById(id);
         if (product.isPresent()) {
             employeesRepository.deleteById(id);
-            return new EmployeesResponseDto("Product deleted successfully");
+            return new EmployeesResponseDto("Employee detail deleted successfully");
         } else {
-            return new EmployeesResponseDto("Product not found with ID: " + id);
+            return new EmployeesResponseDto("Employee ID: " + id+" not found");
         }
     }
     @Override

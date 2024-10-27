@@ -19,7 +19,6 @@ public class EmployeesRequestDto {
         employees.setDepartment(this.department);
         employees.setDesignation(this.designation);
         employees.setSalary(this.salary);
-//        employees.setJoiningDate(this.joiningDate);
         employees.setJoiningDate(new Date());
         return employees;
     }

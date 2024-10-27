@@ -41,8 +41,8 @@ public class EmployeeServiceImpl implements EmployeeService{
 
     @Override
     public EmployeesResponseDto deleteEmployeeById(Long id) {
-        Optional<Employees> product = employeesRepository.findById(id);
-        if (product.isPresent()) {
+        Optional<Employees> employee = employeesRepository.findById(id);
+        if (employee.isPresent()) {
             employeesRepository.deleteById(id);
             return new EmployeesResponseDto("Employee detail deleted successfully");
         } else {
